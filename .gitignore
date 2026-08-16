@@ -1,0 +1,32 @@
+# Elevation rasters and point clouds - hundreds of MB, all re-downloadable
+# from the public nz-elevation S3 bucket via step2c
+data/elevation/
+data/training/
+*.tiff
+*.tif
+*.laz
+*.las
+
+# Cached API responses - regenerate with step1e / step1f
+buildings_cache.json
+new_buildings_geom.json
+linz_outlines_tile.json
+
+# Model weights - ~90 MB, retrain with step6b
+outputs/models/
+*.pt
+
+# Large derived outputs. Keep buildings_new.geojson (1.6 MB) and
+# cnn_buildings_new.geojson (1.8 MB) - they are the actual results.
+outputs/buildings_all.geojson
+outputs/predictions/
+
+# NEVER COMMIT - contains your LINZ API key
+linz_key.txt
+.env
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
